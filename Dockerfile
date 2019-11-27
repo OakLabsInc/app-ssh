@@ -13,7 +13,7 @@ ENV SSH_PORT="9922"
 
 # set SSH_ON to any string to enable ssh.
 # set SSH_ON to an empty string to disable ssh
-ENV SSH_ON="true"
+ENV SSH_ON=""
 
 RUN npm i --engine-strict=true --progress=false --loglevel="error" \
     && npm cache clean --force
