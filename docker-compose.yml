@@ -1,0 +1,18 @@
+---
+version: '2'
+services:
+  app-website:
+    build: .
+    container_name: app-ssh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: index.docker.io/oaklabs/app-ssh:0.1
+    network_mode: host
+    devices:
+      # remove if you dont need to share your graphics card explicitely
+      - /dev/dri:/dev/dri
+      - /dev/snd:/dev/snd
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/shm:/dev/shm
