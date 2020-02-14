@@ -13,7 +13,7 @@ ENV SSH_PORT="9922"
 
 # set SSH_ON to any string to enable ssh.
 # set SSH_ON to an empty string to disable ssh
-ENV SSH_ON=""
+ENV SSH_ON="true"
 
 RUN npm i --engine-strict=true --progress=false --loglevel="error" \
     && npm cache clean --force
@@ -22,7 +22,7 @@ RUN npm i --engine-strict=true --progress=false --loglevel="error" \
 ENV NODE_ENV=production \
     REMOTE_URL=https://www.zivelo.com
 
-EXPOSE 9999
+EXPOSE 9922
 
 COPY entrypoint.sh ./
 RUN chmod +x entrypoint.sh
