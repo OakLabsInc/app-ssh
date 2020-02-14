@@ -27,5 +27,3 @@ EXPOSE 9922
 COPY entrypoint.sh ./
 RUN chmod +x entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
-
-#CMD ["/app/src/index.js"]

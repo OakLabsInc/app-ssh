@@ -34,3 +34,27 @@ fi
 ```
 
 The SSH_ON variable can be added to the JSON at install time to enable/disable ssh access. When it's on, the client would ssh to the machine's IP address on the port specified ( in this example port 9922 ) and have a shell in their container.
+
+### Example
+
+If the unit on your LAN has the IP of 192.168.1.30
+
+``` bash
+ssh root@192.168.1.30 -p 9922
+```
+
+## Install Snippet
+
+``` bash
+{
+  "services": [
+    {
+      "image": "index.docker.io/oaklabs/app-ssh:latest",
+      "environment": {
+        "TZ": "America/Phoenix",
+        "REMOTE_URL":"https://www.fast.com"
+      }
+    }
+  ]
+}
+```
